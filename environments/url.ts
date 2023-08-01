@@ -1,7 +1,10 @@
 export const url = {
 
   login: 'login',
-  users: 'user'
+  users: 'user',
+  conatct: 'contacts',
+  compte: 'comptes',
+  credit: 'credits'
 
 
 

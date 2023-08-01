@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit{
       console.log(data);
       this.http.sessionset('token', JSON.stringify(data.token));
       this.http.sessionset('user', JSON.stringify(data.user));
+
       //this.http.sessionset('role', JSON.stringify(data.user.role.name));
       this.http.sessionset('name', JSON.stringify(data.user.name));
       this.router.navigate(['/']);

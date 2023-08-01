@@ -9,13 +9,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './services/interceptor.service';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
+import { CompteComponent } from './compte/compte.component';
+import { CreditComponent } from './credit/credit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    ContactComponent
+    ContactComponent,
+    CompteComponent,
+    CreditComponent
   ],
   imports: [
     BrowserModule,

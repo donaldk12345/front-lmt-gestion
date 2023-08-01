@@ -4,7 +4,7 @@
       type="button"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
     >
-      Ajouter contact
+      Ajouter compte
     </button>
   </div>
   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -13,17 +13,17 @@
     >
       <tr>
         <th scope="col" class="px-6 py-3">Nom</th>
-        <th scope="col" class="px-6 py-3">Numéro</th>
-        <th scope="col" class="px-6 py-3">Profession</th>
-        <th scope="col" class="px-6 py-3">Région</th>
+        <th scope="col" class="px-6 py-3">email</th>
+        <th scope="col" class="px-6 py-3">Category</th>
+        <th scope="col" class="px-6 py-3">Ville</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-white dark:bg-gray-800" *ngFor="let contact of contacts">
-        <td class="px-6 py-4">{{ contact.nom }}</td>
-        <td class="px-6 py-4">{{ contact.numero }}</td>
-        <td class="px-6 py-4">{{ contact.profession }}</td>
-        <td class="px-6 py-4">{{ contact.region }}</td>
+      <tr class="bg-white dark:bg-gray-800" *ngFor="let compte of comptes">
+        <td class="px-6 py-4">{{ compte.nom }}</td>
+        <td class="px-6 py-4">{{ compte.email }}</td>
+        <td class="px-6 py-4">{{ compte.category.name }}</td>
+        <td class="px-6 py-4">{{ compte.ville }}</td>
       </tr>
     </tbody>
   </table>
