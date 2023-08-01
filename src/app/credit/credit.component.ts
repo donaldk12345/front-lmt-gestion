@@ -31,8 +31,10 @@ export class CreditComponent  implements OnInit{
     this.http.getElement(API_URI + url.credit).subscribe({
       next: data => {
         if (data) {
-          console.log("credits", data);
-          this.credits = data;
+
+          this.credits = Object.values(data);
+
+               console.log("credits", this.credits);
 
         } else {
 

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "contact", component: ContactComponent },
     { path: "credit", component: CreditComponent },
-        { path: "compte", component: CompteComponent ,/*canActivate:[RoleGuard]*/}
+        { path: "compte", component: CompteComponent ,canActivate:[RoleGuard]}
 
 ];
 @NgModule({

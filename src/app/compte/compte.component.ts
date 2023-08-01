@@ -31,7 +31,7 @@ export class CompteComponent implements OnInit{
       next: data => {
         if (data) {
           console.log("comptes", data);
-          this.comptes = data;
+          this.comptes = Object.values(data);
 
         } else {
 
