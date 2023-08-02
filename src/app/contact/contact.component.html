@@ -1,12 +1,76 @@
 <div class="relative mt-3 overflow-x-auto text-center">
-  <div class="col">
-    <button
-      type="button"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-    >
-      Ajouter contact
-    </button>
+  <div class="w-60 m-auto">
+    <form [formGroup]="addContactForm">
+      <div class="mb-6">
+        <label
+          for="nom"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >nom</label
+        >
+        <input
+          type="text"
+          id="text"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder=""
+          required
+          formControlName="nom"
+        />
+      </div>
+      <div class="mb-6">
+        <label
+          for="text"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >numero</label
+        >
+        <input
+          type="text"
+          id="text"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          required
+          formControlName="numero"
+        />
+      </div>
+      <div class="mb-6">
+        <label
+          for="nom"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Profession</label
+        >
+        <input
+          type="text"
+          id="text"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder=""
+          required
+          formControlName="profession"
+        />
+      </div>
+      <div class="mb-6">
+        <label
+          for="text"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >region</label
+        >
+        <input
+          type="text"
+          id="text"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          required
+          formControlName="region"
+        />
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          (click)="addContact()"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        >
+          Ajouter contact
+        </button>
+      </div>
+    </form>
   </div>
+
   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
     <thead
       class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"

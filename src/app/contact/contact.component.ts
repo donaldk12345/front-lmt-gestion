@@ -3,6 +3,7 @@ import { environment } from 'environments/environment';
 import { ResponseService } from '../services/response.service';
 import { Router } from '@angular/router';
 import { url } from 'environments/url';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 const API_URI= `${environment.BASE_URL}`
 @Component({
   selector: 'contact',
@@ -11,17 +12,23 @@ const API_URI= `${environment.BASE_URL}`
 })
 export class ContactComponent {
   contacts: any=[]=[];
+   addContactForm: FormGroup = Object.create(null);
 
-  constructor(private http: ResponseService, private router: Router) {
+  constructor(private http: ResponseService, private router: Router,private formBuilder: FormBuilder,) {
 
-    // this.user = JSON.parse(this.http.getUser());
 
   }
 
     ngOnInit(): void{
 
       this.getContact();
-    //console.log('user', this.user);
+       this.addContactForm=  this.formBuilder.group({
+
+        nom: new FormControl('', [Validators.required]),
+        numero : new FormControl('', [Validators.required]),
+         profession: new FormControl('', [Validators.required]),
+          region: new FormControl('', [Validators.required])
+    });
 
   }
       getContact(){
@@ -37,5 +44,24 @@ export class ContactComponent {
       }
     })
     }
+
+  addContact() {
+    let contactRequest = {
+
+      nom: this.addContactForm.value.nom,
+      profession: this.addContactForm.value.profession,
+      numero: this.addContactForm.value.numero,
+      region: this.addContactForm.value.region
+    }
+
+    this.http.postElement(API_URI + url.conatct, contactRequest).subscribe((data) => {
+      console.log("data", data);
+      this.addContactForm.reset();
+      this.getContact();
+    }, error => {
+      console.log(error);
+    })
+
+  }
 
 }

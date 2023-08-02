@@ -20,10 +20,7 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // if (this.user?.id) {
-    //   this.router.navigate(['/admin/dashboard']);
-    //    return;
-    //  }
+
 
     this.loginForm =  this.formBuilder.group({
 
@@ -47,19 +44,13 @@ export class LoginComponent implements OnInit{
       this.http.sessionset('token', JSON.stringify(data.token));
       this.http.sessionset('user', JSON.stringify(data.user));
 
-      //this.http.sessionset('role', JSON.stringify(data.user.role.name));
       this.http.sessionset('name', JSON.stringify(data.user.name));
       this.router.navigate(['/']);
         // this.reloadPage();
     }, error => {
       console.log(error);
       this.errorMessage = error.error.message;
-      /* this.messageService.add({
-            severity:'error',
-            summary: 'Erreur de connexion',
-            detail: error.error.message,
-            life: 3000
-          });*/
+
     }
     )
 
